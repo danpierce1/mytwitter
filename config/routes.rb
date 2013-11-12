@@ -1,5 +1,6 @@
 Mytwitter::Application.routes.draw do
-    resources :users       # NEW LINE
+    resources :users     # NEW LINE
+    resources :films     # NEW LINE
 
   root to: 'static_pages#home'
 
@@ -24,6 +25,12 @@ Mytwitter::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/test1', to: 'static_pages#test1'
   match '/signup',  to: 'users#new'
+
+    match '/new',  to: 'films#new'
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
