@@ -1,6 +1,6 @@
 Mytwitter::Application.routes.draw do
     resources :users     # NEW LINE
-    resources :films     # NEW LINE
+    resources :films     # relevant entry
 
   root to: 'static_pages#home'
 
@@ -23,10 +23,8 @@ Mytwitter::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/test1', to: 'static_pages#test1'
+  match '/Films', to: 'films#index'
   match '/signup',  to: 'users#new'
-
-    match '/new',  to: 'films#new'
 
 
 

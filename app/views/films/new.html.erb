@@ -3,7 +3,10 @@
   <div class="span6 offset3">
 <%= form_for(@film) do |f| %>
     <%= f.label :Title %><br />
-    <%= f.text_field :Title %>
+    <%= f.text_field :Title%>
+
+    <%= f.label :actor %><br />
+    <%= f.text_field :actor%>
 
     <%= f.label :Genre %>
     <%= f.radio_button :Genre, 'Drama', :checked => true %> Drama

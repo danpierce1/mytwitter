@@ -8,7 +8,8 @@ class FilmsController < ApplicationController
   	def create
     @film = Film.new(params[:film])
     if @film.save
-        redirect_to action: 'index', notice: 'Film was successfully created.'
+        redirect_to action: 'index'
+        flash[:success] = "Film Entry Complete!"    # NEW LINE
     else
         render action: "new" 
     end

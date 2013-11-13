@@ -2,9 +2,10 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Actor</th>
     <th>Genre</th>
     <th>Director</th>
-    <th>Threed</th>
+    <th>Duration</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,6 +13,7 @@
 <% @films.each do |film| %>
   <tr>
     <td><%= film.Title %></td>
+    <td><%= film.actor %></td>
     <td><%= film.Genre %></td>
     <td><%= film.Director %></td>
     <td><%= film.Duration %></td>
