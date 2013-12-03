@@ -1,6 +1,9 @@
 Mytwitter::Application.routes.draw do
-    resources :users     # NEW LINE
-    resources :films     # relevant entry
+  resources :users
+  resources :sessions,   only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy] # NEW LINE
+
+      resources :films     # relevant entry
     resources :courses     # relevant entry
       resources :sessions, only: [:new, :create, :destroy]  # NEW LINE
 
