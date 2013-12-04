@@ -1,24 +1,9 @@
 Mytwitter::Application.routes.draw do
   resources :users
-  resources :sessions,   only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy] # NEW LINE
+  resources :sessions, only: [:new, :create, :destroy] 
+  resources :microposts, only: [:create, :destroy]
 
-      resources :films     # relevant entry
-    resources :courses     # relevant entry
-      resources :sessions, only: [:new, :create, :destroy]  # NEW LINE
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'                  # NEW LINE
-  match '/signout', to: 'sessions#destroy', via: :delete    # NEW LINE
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-
-  root to: 'static_pages#home'
-
-  match '/signup',  to: 'users#new'
-
-  match '/help',    to: 'static_pages#help'
   get "static_pages/home"
 
   get "static_pages/help"
@@ -27,21 +12,18 @@ Mytwitter::Application.routes.draw do
 
   get "static_pages/contact"
 
-  get "static_pages/test1"
+  # get "static_pages/test1"
 
-  # get "users/new"
 
   root to: 'static_pages#home'
-  match '/home',   to: 'static_pages#home'
+  match '/home',    to: 'static_pages#home'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/Films', to: 'films#index'
   match '/signup',  to: 'users#new'
 
-
-
-
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

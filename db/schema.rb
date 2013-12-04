@@ -11,35 +11,36 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131203231110) do
+ActiveRecord::Schema.define(:version => 20131204005459) do
 
-  create_table "courses", :force => true do |t|
-    t.string   "Name"
-    t.string   "Type"
-    t.string   "Leader"
-    t.integer  "Capacity"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "films", :force => true do |t|
-    t.string   "Title"
-    t.string   "Genre"
-    t.string   "Director"
-    t.integer  "Duration"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "actor"
+  create_table "comments", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
+    t.string   "string"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "microposts_tags", :id => false, :force => true do |t|
+    t.integer "micropost_id"
+    t.integer "tag_id"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
