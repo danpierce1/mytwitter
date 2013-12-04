@@ -12,7 +12,7 @@ def create
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'
     end
-  end
+  
   end
 
   def destroy
